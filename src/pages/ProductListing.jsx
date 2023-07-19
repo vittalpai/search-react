@@ -4,7 +4,7 @@ import { MdKeyboardArrowUp } from "react-icons/md";
 import bannerImg from "../assets/bannerHero.jpg";
 import loadingGif from "../assets/loading.gif";
 
-import { Filters, SingleProduct, SortBy } from "../components";
+import { Filters, SingleProduct, SortBy,Footer, Trending } from "../components";
 
 import { useProductsContext } from "../contexts";
 import { useEffect, useState } from "react";
@@ -101,7 +101,10 @@ const ProductListing = () => {
           >
             <MdKeyboardArrowUp className=" text-white" />
           </button>
+          <Trending/>
+          <Footer />
         </div>
+       
       )}
     </>
   );
