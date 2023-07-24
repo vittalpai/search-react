@@ -9,12 +9,10 @@ import {
   addressTypes,
   filterTypes,
 } from "../../utils/actionTypes";
-import { useAuthContext } from "..";
 
 export const ProductsContext = createContext();
 
 const ProductsContextProvider = ({ children }) => {
-  const { token } = useAuthContext();
   const [loading, setLoading] = useState(false);
 
   const [state, dispatch] = useReducer(productsReducer, initialState);
@@ -47,7 +45,7 @@ const ProductsContextProvider = ({ children }) => {
         setLoading(false);
       }
     })();
-  }, [token]);
+  }, []);
 
   const getProductById = (productId) =>
     state.allProducts.find((product) => product._id === productId);

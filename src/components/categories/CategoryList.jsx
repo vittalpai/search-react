@@ -1,4 +1,3 @@
-import { useProductsContext } from "../../contexts";
 import CategoryCard from "./CategoryCard";
 
 const CategoryList = ({ catRef }) => {

@@ -1,20 +1,13 @@
 import { GiRoundStar } from "react-icons/gi";
 import { BsBookmarkHeart, BsFillBookmarkHeartFill } from "react-icons/bs";
 import {
-  useAuthContext,
-  useCartContext,
   useProductsContext,
-  useWishlistContext,
 } from "../../contexts";
 import { useLocation, useNavigate } from "react-router";
 import { notify } from "../../utils/utils";
 
 const SingleProduct = ({ product }) => {
-  const { token } = useAuthContext();
   const { isInCart } = useProductsContext();
-  const { addProductToCart, disableCart } = useCartContext();
-  const { addProductToWishlist, deleteProductFromWishlist, disableWish } =
-    useWishlistContext();
   const navigate = useNavigate();
   const location = useLocation();
   let inCart = isInCart(product._id);
@@ -63,7 +56,7 @@ const SingleProduct = ({ product }) => {
           <p className="text-sm text-gray-600">{product.brand}</p>
         </div>
         <div className="w-full pt-2 border-t flex justify-between items-center">
-          <button
+          {/* <button
             className={`border border-[--primary-text-color]  py-1.5 text-sm  rounded-full px-6 hover:bg-[--primary-text-color] hover:text-white transition hover:shadow-md disabled:cursor-not-allowed`}
             disabled={disableCart}
             onClick={() => {
@@ -80,8 +73,8 @@ const SingleProduct = ({ product }) => {
             }}
           >
             {inCart ? "Go to Bag" : "Add to Bag"}
-          </button>
-          <button
+          </button> */}
+          {/* <button
             disabled={disableWish}
             className="disabled:cursor-not-allowed"
             onClick={() => {
@@ -102,7 +95,7 @@ const SingleProduct = ({ product }) => {
             ) : (
               <BsBookmarkHeart className="text-xl hover:text-rose-600 hover:shadow-md transition" />
             )}
-          </button>
+          </button> */}
         </div>
       </div>
     </div>
